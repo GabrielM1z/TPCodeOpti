@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RestorantRepositoryAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infrastructure</a> &gt; <a href="index.source.html" class="el_package">org.mines.address.infrastructure.repository</a> &gt; <span class="el_source">RestorantRepositoryAdapter.java</span></div><h1>RestorantRepositoryAdapter.java</h1><pre class="source lang-java linenums">package org.mines.address.infrastructure.repository;
+
+import org.mines.address.domain.model.Address;
+import org.mines.address.domain.model.Restorant;
+import org.mines.address.port.driven.RestorantRepositoryPort;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+import java.util.Objects;
+import java.util.UUID;
+
+@Repository
+public class RestorantRepositoryAdapter implements RestorantRepositoryPort {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+<span class="fc" id="L23">    public RestorantRepositoryAdapter(JdbcTemplate jdbcTemplate) {</span>
+<span class="fc" id="L24">        this.jdbcTemplate = jdbcTemplate;</span>
+<span class="fc" id="L25">    }</span>
+
+    @Override
+    public Restorant insert(Restorant restorant) {
+<span class="nc" id="L29">        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(Objects.requireNonNull(jdbcTemplate.getDataSource())).withTableName(&quot;restorant&quot;);</span>
+<span class="nc" id="L30">        final UUID uuid = UUID.randomUUID();</span>
+
+<span class="nc" id="L32">        final SqlParameterSource in = new MapSqlParameterSource()</span>
+<span class="nc" id="L33">                .addValue(&quot;uuid&quot;, uuid)</span>
+<span class="nc" id="L34">                .addValue(&quot;name&quot;, restorant.name())</span>
+<span class="nc" id="L35">                .addValue(&quot;category&quot;, restorant.category())</span>
+<span class="nc" id="L36">                .addValue(&quot;rate&quot;, restorant.rate());</span>
+
+<span class="nc" id="L38">        simpleJdbcInsert.execute(in);</span>
+
+<span class="nc" id="L40">        return Restorant.RestorantBuilder.aRestorant()</span>
+<span class="nc" id="L41">                .withId(uuid)</span>
+<span class="nc" id="L42">                .withName(restorant.name())</span>
+<span class="nc" id="L43">                .withCategory(restorant.category())</span>
+<span class="nc" id="L44">                .withRate(restorant.rate())</span>
+<span class="nc" id="L45">                .build();</span>
+    }
+
+    @Override
+    public Collection&lt;Restorant&gt; selectAll() {
+<span class="fc" id="L50">        String sql = &quot;select uuid,name,rate,category from restorant&quot;;</span>
+<span class="fc" id="L51">        return jdbcTemplate.query(sql, new RestorantRowMapper());</span>
+    }
+
+    @Override
+    public Collection&lt;Restorant&gt; selectByCategory(String category) {
+<span class="nc" id="L56">        return null;</span>
+    }
+
+    @Override
+    public Collection&lt;Restorant&gt; selectByRate(int rate) {
+<span class="nc" id="L61">        return null;</span>
+    }
+
+    @Override
+    public Collection&lt;Restorant&gt; selectByMeanAge(int age) {
+<span class="nc" id="L66">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
