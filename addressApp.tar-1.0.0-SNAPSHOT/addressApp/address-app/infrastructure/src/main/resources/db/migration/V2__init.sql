@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS People (
 -- Table Meal
 CREATE TABLE IF NOT EXISTS Meal (
     uuid UUID PRIMARY KEY,
-    heure DATETIME,
+    heure FLOAT,
     people_uuid UUID,
     restaurant_uuid UUID,
     FOREIGN KEY (restaurant_uuid) REFERENCES Restorant(uuid),

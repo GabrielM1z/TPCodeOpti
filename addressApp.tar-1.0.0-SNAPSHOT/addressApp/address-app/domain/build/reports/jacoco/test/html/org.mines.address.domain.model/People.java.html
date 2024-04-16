@@ -2,7 +2,7 @@
 
 import java.util.UUID;
 
-<span class="nc" id="L5">public record People(UUID id, String name, String firstName, int age) {</span>
+<span class="fc" id="L5">public record People(UUID id, String name, String firstName, int age) {</span>
 
     public static final class PeopleBuilder {
         private UUID id;
@@ -14,31 +14,31 @@ import java.util.UUID;
         }
 
         public static PeopleBuilder aPeople() {
-<span class="nc" id="L17">            return new PeopleBuilder();</span>
+<span class="fc" id="L17">            return new PeopleBuilder();</span>
         }
 
         public PeopleBuilder withId(UUID id) {
-<span class="nc" id="L21">            this.id = id;</span>
-<span class="nc" id="L22">            return this;</span>
+<span class="fc" id="L21">            this.id = id;</span>
+<span class="fc" id="L22">            return this;</span>
         }
 
         public PeopleBuilder withName(String name) {
-<span class="nc" id="L26">            this.name = name;</span>
-<span class="nc" id="L27">            return this;</span>
+<span class="fc" id="L26">            this.name = name;</span>
+<span class="fc" id="L27">            return this;</span>
         }
 
         public PeopleBuilder withFirstName(String firstName) {
-<span class="nc" id="L31">            this.firstName = firstName;</span>
-<span class="nc" id="L32">            return this;</span>
+<span class="fc" id="L31">            this.firstName = firstName;</span>
+<span class="fc" id="L32">            return this;</span>
         }
 
         public PeopleBuilder withAge(int age) {
-<span class="nc" id="L36">            this.age = age;</span>
-<span class="nc" id="L37">            return this;</span>
+<span class="fc" id="L36">            this.age = age;</span>
+<span class="fc" id="L37">            return this;</span>
         }
 
         public People build() {
-<span class="nc" id="L41">            return new People(id, name, firstName, age);</span>
+<span class="fc" id="L41">            return new People(id, name, firstName, age);</span>
         }
     }
 }

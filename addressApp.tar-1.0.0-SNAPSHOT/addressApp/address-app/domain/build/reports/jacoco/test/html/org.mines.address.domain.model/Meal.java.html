@@ -6,38 +6,44 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-<span class="nc" id="L9">public record Meal(UUID id, int heure, Restorant restorant) {</span>
+<span class="fc" id="L9">public record Meal(UUID id, int heure, Restorant restorant, People people) {</span>
 
 
     public static final class MealBuilder {
         private UUID id;
         private int heure;
         private Restorant restorant;
+        private People people;
 
         private MealBuilder() {
         }
 
         public static MealBuilder aMeal() {
-<span class="nc" id="L21">            return new MealBuilder();</span>
+<span class="fc" id="L22">            return new MealBuilder();</span>
         }
 
         public MealBuilder withId(UUID id) {
-<span class="nc" id="L25">            this.id = id;</span>
-<span class="nc" id="L26">            return this;</span>
+<span class="fc" id="L26">            this.id = id;</span>
+<span class="fc" id="L27">            return this;</span>
         }
 
         public MealBuilder withHeure(int heure) {
-<span class="nc" id="L30">            this.heure = heure;</span>
-<span class="nc" id="L31">            return this;</span>
+<span class="fc" id="L31">            this.heure = heure;</span>
+<span class="fc" id="L32">            return this;</span>
         }
 
         public MealBuilder withRestorant(Restorant restorant) {
-<span class="nc" id="L35">            this.restorant = restorant;</span>
-<span class="nc" id="L36">            return this;</span>
+<span class="fc" id="L36">            this.restorant = restorant;</span>
+<span class="fc" id="L37">            return this;</span>
+        }
+
+        public MealBuilder withPeople(People people) {
+<span class="fc" id="L41">            this.people = people;</span>
+<span class="fc" id="L42">            return this;</span>
         }
 
         public Meal build() {
-<span class="nc" id="L40">            return new Meal(id, heure, restorant);</span>
+<span class="fc" id="L46">            return new Meal(id, heure, restorant, people);</span>
         }
     }
 }

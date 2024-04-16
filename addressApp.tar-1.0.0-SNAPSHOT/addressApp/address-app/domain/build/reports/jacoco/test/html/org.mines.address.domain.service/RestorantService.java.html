@@ -9,42 +9,44 @@ import org.mines.address.port.driving.RestorantUseCase;
 import org.mines.address.port.driving.TownUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 public class RestorantService implements RestorantUseCase {
 
     @Autowired
     private RestorantRepositoryPort restorantRepositoryPort;
 
-<span class="fc" id="L19">    public RestorantService(RestorantRepositoryPort restorantRepositoryPort) {</span>
-<span class="fc" id="L20">        this.restorantRepositoryPort = restorantRepositoryPort;</span>
-<span class="fc" id="L21">    }</span>
+<span class="nc" id="L21">    public RestorantService(RestorantRepositoryPort restorantRepositoryPort) {</span>
+<span class="nc" id="L22">        this.restorantRepositoryPort = restorantRepositoryPort;</span>
+<span class="nc" id="L23">    }</span>
     @Override
     public Restorant save(Restorant restorant) {
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if (restorant.name() == null) {</span>
-<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;name is required&quot;);</span>
-<span class="nc bnc" id="L26" title="All 4 branches missed.">        } else if (restorant.rate() &lt; 0 || restorant.rate() &gt; 5) {</span>
-<span class="nc" id="L27">            throw new IllegalArgumentException(&quot;rate must be between 0 and 5&quot;);</span>
-<span class="nc bnc" id="L28" title="All 2 branches missed.">        } else if (restorant.category() == null) {</span>
-<span class="nc" id="L29">            throw new IllegalArgumentException(&quot;invalid number&quot;);</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (restorant.name() == null) {</span>
+<span class="nc" id="L27">            throw new IllegalArgumentException(&quot;name is required&quot;);</span>
+<span class="nc bnc" id="L28" title="All 4 branches missed.">        } else if (restorant.rate() &lt; 0 || restorant.rate() &gt; 5) {</span>
+<span class="nc" id="L29">            throw new IllegalArgumentException(&quot;rate must be between 0 and 5&quot;);</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        } else if (restorant.category() == null) {</span>
+<span class="nc" id="L31">            throw new IllegalArgumentException(&quot;invalid number&quot;);</span>
         }
 
-<span class="nc" id="L32">        return restorantRepositoryPort.insert(restorant);</span>
+<span class="nc" id="L34">        return restorantRepositoryPort.insert(restorant);</span>
     }
 
     @Override
     public Collection&lt;Restorant&gt; findByCategory(String category) {
-<span class="nc" id="L37">        return restorantRepositoryPort.selectByCategory(category);</span>
+<span class="nc" id="L39">        return restorantRepositoryPort.selectByCategory(category);</span>
     }
 
     @Override
     public Collection&lt;Restorant&gt; findByRate(int rate) {
-<span class="nc" id="L42">        return restorantRepositoryPort.selectByRate(rate);</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        return restorantRepositoryPort.selectAll().stream().filter(restorant -&gt; restorant.rate() == rate).collect(Collectors.toCollection(ArrayList::new));</span>
     }
 
     @Override
     public Collection&lt;Restorant&gt; findByMeanAge(int age) {
-<span class="nc" id="L47">        return restorantRepositoryPort.selectByMeanAge(age);</span>
+<span class="nc" id="L49">        return restorantRepositoryPort.selectByMeanAge(age);</span>
     }
 
 
