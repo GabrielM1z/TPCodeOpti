@@ -241,6 +241,8 @@ components:
         - category
         - rate
       properties:
+        id:
+          type: string
         name:
           type: string
         category:
@@ -254,6 +256,8 @@ components:
         - firstName
         - age
       properties:
+        id:
+          type: string
         name:
           type: string
         firstName:

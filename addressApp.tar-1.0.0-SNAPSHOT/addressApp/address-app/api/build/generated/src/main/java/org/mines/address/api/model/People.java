@@ -18,8 +18,10 @@ import javax.annotation.Generated;
  * People
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T10:13:33.971733200+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T16:23:07.491195900+02:00[Europe/Paris]")
 public class People {
+
+  private String id;
 
   private String name;
 
@@ -38,6 +40,26 @@ public class People {
     this.name = name;
     this.firstName = firstName;
     this.age = age;
+  }
+
+  public People id(String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+  */
+  
+  @Schema(name = "id", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public People name(String name) {
@@ -109,20 +131,22 @@ public class People {
       return false;
     }
     People people = (People) o;
-    return Objects.equals(this.name, people.name) &&
+    return Objects.equals(this.id, people.id) &&
+        Objects.equals(this.name, people.name) &&
         Objects.equals(this.firstName, people.firstName) &&
         Objects.equals(this.age, people.age);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, firstName, age);
+    return Objects.hash(id, name, firstName, age);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class People {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    age: ").append(toIndentedString(age)).append("\n");

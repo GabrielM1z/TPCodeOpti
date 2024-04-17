@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -31,6 +33,9 @@ public class RestorantController implements RestorantApi {
 
     @Override
     public ResponseEntity<List<Restorant>> listRestorants() {
-        return restorantUseCase.findAll();
+
+        List<Restorant> restaurantList = (List<Restorant>) restorantUseCase.findAll();
+
+        return ResponseEntity.ok(restaurantList);
     }
 }

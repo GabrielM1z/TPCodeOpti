@@ -18,10 +18,11 @@ import javax.annotation.Generated;
  * Restorant
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T10:13:33.971733200+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T16:23:07.491195900+02:00[Europe/Paris]")
 public class Restorant {
 
-  private UUID id;
+  private String id;
+
   private String name;
 
   private String category;
@@ -35,11 +36,30 @@ public class Restorant {
   /**
    * Constructor with only required parameters
    */
-  public Restorant(UUID id, String name, String category, Long rate) {
-    this.id = id;
+  public Restorant(String name, String category, Long rate) {
     this.name = name;
     this.category = category;
     this.rate = rate;
+  }
+
+  public Restorant id(String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id
+   * @return id
+  */
+  
+  @Schema(name = "id", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public Restorant name(String name) {
@@ -60,14 +80,6 @@ public class Restorant {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public UUID getId() {
-    return id;
-  }
-
-  public void setId(UUID id) {
-    this.id = id;
   }
 
   public Restorant category(String category) {
@@ -119,20 +131,22 @@ public class Restorant {
       return false;
     }
     Restorant restorant = (Restorant) o;
-    return Objects.equals(this.name, restorant.name) &&
+    return Objects.equals(this.id, restorant.id) &&
+        Objects.equals(this.name, restorant.name) &&
         Objects.equals(this.category, restorant.category) &&
         Objects.equals(this.rate, restorant.rate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, rate);
+    return Objects.hash(id, name, category, rate);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Restorant {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");

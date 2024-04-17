@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T10:13:33.971733200+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T16:23:07.491195900+02:00[Europe/Paris]")
 @Validated
 @Tag(name = "people", description = "the people API")
 public interface PeopleApi {
@@ -70,7 +70,7 @@ public interface PeopleApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"firstName\" : \"firstName\", \"name\" : \"name\", \"age\" : 0 }";
+                    String exampleString = "{ \"firstName\" : \"firstName\", \"name\" : \"name\", \"id\" : \"id\", \"age\" : 0 }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -108,7 +108,7 @@ public interface PeopleApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "[ { \"firstName\" : \"firstName\", \"name\" : \"name\", \"age\" : 0 }, { \"firstName\" : \"firstName\", \"name\" : \"name\", \"age\" : 0 } ]";
+                    String exampleString = "[ { \"firstName\" : \"firstName\", \"name\" : \"name\", \"id\" : \"id\", \"age\" : 0 }, { \"firstName\" : \"firstName\", \"name\" : \"name\", \"id\" : \"id\", \"age\" : 0 } ]";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

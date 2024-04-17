@@ -50,7 +50,7 @@ public class RestorantControllerTest {
     }
 
 
-    // Map from restorant API to town domain
+    // Map from restorant API to restorant domain
     private org.mines.address.domain.model.Restorant map(org.mines.address.api.model.Restorant restorant) {
         return org.mines.address.domain.model.Restorant.RestorantBuilder.aRestorant()
                 .withName(restorant.getName())
@@ -59,14 +59,15 @@ public class RestorantControllerTest {
                 .build();
     }
 
-    // Map from town domain to town API
+    // Map from restorant domain to restorant API
     private org.mines.address.api.model.Restorant map(org.mines.address.domain.model.Restorant restorant) {
         org.mines.address.api.model.Restorant apiRestorant = new org.mines.address.api.model.Restorant();
         apiRestorant.setId(restorant.id().toString());
         apiRestorant.setName(restorant.name());
-        apiRestorant.setPostCode(String.valueOf(town.postCode()));
+        apiRestorant.setCategory(String.valueOf(restorant.category()));
+        apiRestorant.setRate((long) restorant.rate());
 
-        return apiTown;
+        return apiRestorant;
     }
 
     // Map from API address to domain Address
