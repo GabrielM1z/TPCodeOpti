@@ -18,9 +18,10 @@ import javax.annotation.Generated;
  * Restorant
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-16T16:57:55.596546+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-17T10:13:33.971733200+02:00[Europe/Paris]")
 public class Restorant {
 
+  private UUID id;
   private String name;
 
   private String category;
@@ -34,7 +35,8 @@ public class Restorant {
   /**
    * Constructor with only required parameters
    */
-  public Restorant(String name, String category, Long rate) {
+  public Restorant(UUID id, String name, String category, Long rate) {
+    this.id = id;
     this.name = name;
     this.category = category;
     this.rate = rate;
@@ -58,6 +60,14 @@ public class Restorant {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public UUID getId() {
+    return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public Restorant category(String category) {

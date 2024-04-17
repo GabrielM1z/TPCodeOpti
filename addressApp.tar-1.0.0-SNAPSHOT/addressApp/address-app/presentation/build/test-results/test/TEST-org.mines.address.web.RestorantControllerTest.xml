@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.mines.address.web.RestorantControllerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-04-17T08:17:59" hostname="ALBUS" time="0.305">
+  <properties/>
+  <testcase name="shouldGetAll()" classname="org.mines.address.web.RestorantControllerTest" time="0.305">
+    <failure message="java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;501&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;501&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at org.mines.address.web.RestorantControllerTest.shouldGetAll(RestorantControllerTest.java:45)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-17T10:17:56.801+02:00  INFO 16916 --- [    Test worker] o.m.address.web.RestorantControllerTest  : Starting RestorantControllerTest using Java 21.0.2 with PID 16916 (started by Albus in C:\Users\Albus\Documents\EMA\codeopti\TPCodeOpti\addressApp.tar-1.0.0-SNAPSHOT\addressApp\address-app\presentation)
+2024-04-17T10:17:56.821+02:00  INFO 16916 --- [    Test worker] o.m.address.web.RestorantControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T10:17:59.170+02:00  INFO 16916 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-04-17T10:17:59.170+02:00  INFO 16916 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-04-17T10:17:59.175+02:00  INFO 16916 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-04-17T10:17:59.264+02:00  INFO 16916 --- [    Test worker] o.m.address.web.RestorantControllerTest  : Started RestorantControllerTest in 2.903 seconds (process running for 4.791)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /restorant
+       Parameters = {}
+          Headers = [Content-Type:"application/json", Accept:"application/json"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = org.mines.address.web.controller.RestorantController
+           Method = org.mines.address.web.controller.RestorantController#listRestorants()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 501
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Albus\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.11\f9cb566608fbac6bc7bf54901a7aa11543a989ee\byte-buddy-agent-1.14.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

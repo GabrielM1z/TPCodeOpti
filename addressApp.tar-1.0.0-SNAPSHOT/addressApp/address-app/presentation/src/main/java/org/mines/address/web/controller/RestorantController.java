@@ -31,6 +31,6 @@ public class RestorantController implements RestorantApi {
 
     @Override
     public ResponseEntity<List<Restorant>> listRestorants() {
-        return RestorantApi.super.listRestorants();
+        return restorantUseCase.findAll();
     }
 }
