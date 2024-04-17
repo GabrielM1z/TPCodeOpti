@@ -35,6 +35,11 @@ public class RestorantService implements RestorantUseCase {
     }
 
     @Override
+    public Collection<Restorant> findAll() {
+        return restorantRepositoryPort.selectAll();
+    }
+
+    @Override
     public Collection<Restorant> findByCategory(String category) {
         return restorantRepositoryPort.selectByCategory(category);
     }

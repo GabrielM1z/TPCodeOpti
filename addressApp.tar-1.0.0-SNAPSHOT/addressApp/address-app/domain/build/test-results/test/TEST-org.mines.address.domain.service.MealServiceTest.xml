@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.mines.address.domain.service.MealServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-16T13:35:29" hostname="ALBUS" time="1.339">
+<testsuite name="org.mines.address.domain.service.MealServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-16T14:31:39" hostname="LAPTOP-KESRG1B1" time="0.044">
   <properties/>
-  <testcase name="shouldSaveAMeal()" classname="org.mines.address.domain.service.MealServiceTest" time="1.339"/>
+  <testcase name="shouldSaveAMeal()" classname="org.mines.address.domain.service.MealServiceTest" time="0.044"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Albus\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.11\f9cb566608fbac6bc7bf54901a7aa11543a989ee\byte-buddy-agent-1.14.11.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

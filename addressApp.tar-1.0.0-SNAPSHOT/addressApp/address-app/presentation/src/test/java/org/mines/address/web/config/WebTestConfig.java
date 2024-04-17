@@ -1,6 +1,8 @@
 package org.mines.address.web.config;
 
 import org.mines.address.port.driving.AddressUseCase;
+import org.mines.address.port.driving.PeopleUseCase;
+import org.mines.address.port.driving.RestorantUseCase;
 import org.mines.address.port.driving.TownUseCase;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Configuration;
@@ -14,4 +16,10 @@ public class WebTestConfig {
 
     @MockBean
     private AddressUseCase addressUseCase;
+
+    @MockBean
+    private RestorantUseCase restorantUseCase;
+
+    @MockBean
+    private PeopleUseCase peopleUseCase;
 }

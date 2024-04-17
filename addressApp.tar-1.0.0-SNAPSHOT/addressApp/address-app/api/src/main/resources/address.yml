@@ -145,6 +145,72 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Address"
+  /restorant:
+    get:
+      summary: List all restorants
+      operationId: listRestorants
+      tags:
+        - restorant
+      responses:
+        '200':
+          description: An array of restorant
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restorant'
+    post:
+      summary: Create a restorant
+      operationId: createRestorant
+      tags:
+        - restorant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restorant'
+      responses:
+        '201':
+          description: Null response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restorant'
+  /people:
+    get:
+      summary: List all people
+      operationId: listPeople
+      tags:
+        - people
+      responses:
+        '200':
+          description: An array of people
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/People'
+    post:
+      summary: Create a people
+      operationId: createPeople
+      tags:
+        - people
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/People'
+      responses:
+        '201':
+          description: Null response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/People'
 
 components:
   schemas:
@@ -169,3 +235,29 @@ components:
           format: int64
         street:
           type: string
+    Restorant:
+      required:
+        - name
+        - category
+        - rate
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        rate:
+          type: integer
+          format: int64
+    People:
+      required:
+        - name
+        - firstName
+        - age
+      properties:
+        name:
+          type: string
+        firstName:
+          type: string
+        age:
+          type: integer
+          format: int64

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.mines.address.web.TownControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-12T12:57:00" hostname="LAPTOP-KESRG1B1" time="0.458">
+<testsuite name="org.mines.address.web.TownControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-16T15:17:15" hostname="LAPTOP-KESRG1B1" time="0.399">
   <properties/>
-  <testcase name="shouldNotGetInstanceData()" classname="org.mines.address.web.TownControllerTest" time="0.33"/>
-  <testcase name="shouldGetATown()" classname="org.mines.address.web.TownControllerTest" time="0.125"/>
+  <testcase name="shouldNotGetInstanceData()" classname="org.mines.address.web.TownControllerTest" time="0.279"/>
+  <testcase name="shouldGetATown()" classname="org.mines.address.web.TownControllerTest" time="0.118"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -12,12 +12,12 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.4)
 
-2024-04-12T14:56:58.504+02:00  INFO 66016 --- [    Test worker] o.mines.address.web.TownControllerTest   : Starting TownControllerTest using Java 21.0.2 with PID 66016 (started by Gab in E:\TPCodeOpti\addressApp.tar-1.0.0-SNAPSHOT\addressApp\address-app\presentation)
-2024-04-12T14:56:58.515+02:00  INFO 66016 --- [    Test worker] o.mines.address.web.TownControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2024-04-12T14:57:00.539+02:00  INFO 66016 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-04-12T14:57:00.540+02:00  INFO 66016 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-04-12T14:57:00.545+02:00  INFO 66016 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
-2024-04-12T14:57:00.629+02:00  INFO 66016 --- [    Test worker] o.mines.address.web.TownControllerTest   : Started TownControllerTest in 2.419 seconds (process running for 4.006)
+2024-04-16T17:17:13.501+02:00  INFO 65972 --- [    Test worker] o.mines.address.web.TownControllerTest   : Starting TownControllerTest using Java 21.0.2 with PID 65972 (started by Gab in E:\TPCodeOpti\addressApp.tar-1.0.0-SNAPSHOT\addressApp\address-app\presentation)
+2024-04-16T17:17:13.505+02:00  INFO 65972 --- [    Test worker] o.mines.address.web.TownControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2024-04-16T17:17:15.594+02:00  INFO 65972 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-04-16T17:17:15.595+02:00  INFO 65972 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-04-16T17:17:15.599+02:00  INFO 65972 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-04-16T17:17:15.675+02:00  INFO 65972 --- [    Test worker] o.mines.address.web.TownControllerTest   : Started TownControllerTest in 2.47 seconds (process running for 4.038)
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Gab\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.11\f9cb566608fbac6bc7bf54901a7aa11543a989ee\byte-buddy-agent-1.14.11.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

@@ -162,6 +162,42 @@ paths:
       - address
       x-content-type: application/json
       x-accepts: application/json
+  /restorant:
+    get:
+      operationId: listRestorants
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Restorant'
+                type: array
+          description: An array of restorant
+      summary: List all restorants
+      tags:
+      - restorant
+      x-accepts: application/json
+    post:
+      operationId: createRestorant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restorant'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restorant'
+          description: Null response
+      summary: Create a restorant
+      tags:
+      - restorant
+      x-content-type: application/json
+      x-accepts: application/json
 components:
   schemas:
     Town:
@@ -192,4 +228,21 @@ components:
       required:
       - number
       - street
+    Restorant:
+      example:
+        rate: 0
+        name: name
+        category: category
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        rate:
+          format: int64
+          type: integer
+      required:
+      - category
+      - name
+      - rate
 

@@ -10,6 +10,8 @@ public interface RestorantUseCase {
 
     Restorant save(Restorant restorant);
 
+    Collection<Restorant> findAll();
+
     Collection<Restorant> findByCategory(String category);
     Collection<Restorant> findByRate(int rate);
 
